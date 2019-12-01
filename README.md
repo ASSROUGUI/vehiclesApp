@@ -17,7 +17,7 @@ Motorcycle.
 Truck
  
  
- this app shows these vehicles 
+it shows these vehicles with thier props :img ,name ....
  
  
  i used simple db for 3-vehicles
