@@ -41,6 +41,7 @@ public class vehicles {
    
   
    public void setFuelType(String FuelType){
+       
        if (FuelType.equals("Diesel")|| FuelType.equals("Petrol")|| FuelType.equals("Gas")||FuelType.equals("Electric") )
        
        { this.FuelType=FuelType;
@@ -98,7 +99,7 @@ public class vehicles {
 //}
    
           
-           public void WheelsNo(int WheelsNo ){
+           public void setWheelsNo(int WheelsNo ){
        
         if (WheelsNo<=0){
          System.out.println("Number of Wheels cannot be zero or minus");}
