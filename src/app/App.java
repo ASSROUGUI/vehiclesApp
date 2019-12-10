@@ -22,12 +22,13 @@ public class App {
 //        vehicles1.setFuelType("Diesel");
 //        vehicles1.setvehicles(8,4,5,7,-1,8);
 //        vehicles1.setColor("white");
-   System.out.println("welcome to vehicles press 1: Cars 2:Motorcycle 3.Trucks"); 
+   System.out.println("welcome to vehicles press to show 1-Cars 2-Motorcycle 3-Trucks 4-to buy a vehicle"); 
 
    
     
          Scanner input = new Scanner(System.in);
        int  num = input.nextInt();
+         Scanner vehiclesType = new Scanner(System.in);
   
     car carObject = new car();
     Motorcycle MotorcycleObject = new Motorcycle();
@@ -35,17 +36,27 @@ public class App {
     
 
 
+    
+
 switch(num) {
  case 1:
    
     carObject.welcomeMsg();
-    carObject.setname("classic car", "toyota");
-    carObject.setFuelType("Gas");
+    System.out.println("newest car is : "+carObject.getnewestCars()); 
+     System.out.println("Enter name of the car"); 
+       carObject.name = vehiclesType.nextLine();
+           System.out.println("\n Enter type of the car"); 
+       carObject.type=vehiclesType.nextLine();
+    carObject.setname(carObject.name, carObject.type);
+     System.out.println("\n Enter the Fuel Type "); 
+    carObject.FuelType=vehiclesType.nextLine();
     carObject.setColor("white");
     carObject.setseatsNo(4);
-    carObject.WheelsNo(4);
+    carObject.setWheelsNo(4);
     carObject.setYearMake(2012);
-    carObject.setTorque(3);
+   System.out.println("Enter number of  Torque"); 
+    carObject.Torque = input.nextInt();
+    carObject.setTorque(carObject.Torque);
     carObject.setRPM(6);
     carObject.setHorsePower(66);
         System.out.println("bye"); 
@@ -53,13 +64,21 @@ switch(num) {
   case 2:
          
     MotorcycleObject.welcomeMsg();
-    MotorcycleObject.setname("superMotorcycle", "toyota");
-    MotorcycleObject.setFuelType("water");
+    System.out.println("Enter name of the Motorcycle"); 
+       MotorcycleObject.name = vehiclesType.nextLine();
+           System.out.println("\n Enter type of the Motorcycle"); 
+       MotorcycleObject.type=vehiclesType.nextLine();
+    MotorcycleObject.setname(MotorcycleObject.name, MotorcycleObject.type);
+     System.out.println("\n Enter the Fuel Type "); 
+    MotorcycleObject.FuelType=vehiclesType.nextLine();
+    MotorcycleObject.setFuelType( MotorcycleObject.FuelType);
     MotorcycleObject.setColor("red");
-    MotorcycleObject.WheelsNo(2);
+    MotorcycleObject.setWheelsNo(2);
     MotorcycleObject.setseatsNo(2);
     MotorcycleObject.setYearMake(2019);
-    MotorcycleObject.setTorque(999);
+       System.out.println("Enter number of Torque "); 
+    MotorcycleObject.Torque=input.nextInt();
+    MotorcycleObject.setTorque(MotorcycleObject.Torque);
     MotorcycleObject.setRPM(2);
     MotorcycleObject.setHorsePower(106);
         System.out.println("bye"); 
@@ -68,21 +87,61 @@ switch(num) {
      case 3:
          
     truckObject.welcomeMsg();
-    truckObject.setname("super Truck", "hondai");
-    truckObject.setFuelType("Diesel");
-    truckObject.setColor("black");
-    truckObject.setseatsNo(2);
-    truckObject.WheelsNo(4);
-    truckObject.setYearMake(2016);
-    truckObject.setTorque(0);
-    truckObject.setRPM(-6);
-    truckObject.setHorsePower(218);
-    truckObject.setLoadWeight(999);
+      System.out.println("Enter name of the car"); 
+       truckObject.name = vehiclesType.nextLine();
+           System.out.println("Enter type of the car"); 
+       truckObject.type=vehiclesType.nextLine();
+    truckObject.setname( truckObject.name, truckObject.type);
+     System.out.println("\n Enter the Fuel Type "); 
+       truckObject.FuelType=vehiclesType.nextLine();
+    truckObject.setFuelType(truckObject.FuelType);
+        System.out.println("Enter the color "); 
+       truckObject.Color=vehiclesType.nextLine();
+    truckObject.setColor( truckObject.Color);
+    System.out.println("Enter Number of seats Number"); 
+       truckObject.seatsNo = input.nextInt();
+    truckObject.setseatsNo(truckObject.seatsNo);
+     System.out.println("Enter Number of Wheels Number"); 
+       truckObject.WheelsNo = input.nextInt();
+    truckObject.setWheelsNo(truckObject.WheelsNo);
+    System.out.println("Enter Year Made it in"); 
+       truckObject.YearMake = input.nextInt();
+    truckObject.setYearMake(truckObject.YearMake);
+       System.out.println("Enter Number of Torque"); 
+       truckObject.Torque = input.nextInt();
+    truckObject.setTorque(truckObject.Torque);
+    System.out.println("Enter Number of Engine RPM "); 
+       truckObject.RPM = input.nextInt();
+    truckObject.setRPM(truckObject.RPM);
+    System.out.println("Enter Number of HorsePower "); 
+       truckObject.HorsePower = input.nextInt();
+    truckObject.setHorsePower(truckObject.HorsePower);
+      System.out.println("Enter Load Weight"); 
+       truckObject.LoadWeight = input.nextInt();
+    truckObject.setLoadWeight(truckObject.LoadWeight);
         System.out.println("bye"); 
   
     break;
+    
+     case 4:
+
+ 	   System.out.println("press how many type of vehicles do you want"); 
+            int  vehiclesNum = input.nextInt();
+ String[] vehiclesArray =new String[vehiclesNum];     
+int i;
+System.out.println("Please enter  types  ");              
+ for ( i = 0; i < vehiclesArray.length; i++) {
+             System.out.print(i +"-" );
+        vehiclesArray[i] = vehiclesType.nextLine();  }
+
+System.out.println("\n  vehicles you wanted are : ");
+		for (i = 0; i < vehiclesArray.length; i++)
+		{System.out.print(i +"-" + vehiclesArray[i] + "\t");}
+                System.out.println("\n ");
+  break;
+       
   default:
-      System.out.println("Not Failed number");
+      System.out.println("Not Failed number ..try again with numbers from 1 to 4");
 }
 
    
