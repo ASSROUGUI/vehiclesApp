@@ -11,17 +11,15 @@ package app;
  */
 public class truck extends vehicles {
    
-    int LoadWeight;
-    
-      public void setLoadWeight(int LoadWeight ){
+  public  int LoadWeight;
+      void setLoadWeight(int LoadWeight ){
        
         if (LoadWeight>=600){
          System.out.println("Load Weight is not accepted becacause it is over wight >600 ");}
         else{ this.LoadWeight=LoadWeight;
-        System.out.print("LoadWeight is accepted : ");
+        System.out.print("Load Weight is accepted : ");
                 System.out.println(LoadWeight);}}
-        
-        
+
       
             public void welcomeMsg(){
    System.out.println("  welcome to Trucks");}
