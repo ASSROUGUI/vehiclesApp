@@ -22,24 +22,48 @@ public class App {
 //        vehicles1.setFuelType("Diesel");
 //        vehicles1.setvehicles(8,4,5,7,-1,8);
 //        vehicles1.setColor("white");
-   System.out.println("welcome to vehicles press to show 1-Cars 2-Motorcycle 3-Trucks 4-to buy a vehicle"); 
+//   System.out.println("welcome to vehicles press to show 1-Cars 2-Motorcycle 3-Trucks 4-to buy a vehicle"); 
 
    
     
          Scanner input = new Scanner(System.in);
-       int  num = input.nextInt();
+       String  num ;
+//= input.nextInt();
          Scanner vehiclesType = new Scanner(System.in);
   
     car carObject = new car();
     Motorcycle MotorcycleObject = new Motorcycle();
     truck truckObject =new truck();
     
+  
 
 
-    
+ 	   System.out.println("press how many type of vehicles do you want"); 
+            int  vehiclesNum = input.nextInt();
+ String[] vehiclesArray =new String[vehiclesNum];     
+int i;
+System.out.println("Please enter  types  1-cars 2-motorcycle 3-trucks  ");              
+ for ( i = 0; i < vehiclesArray.length; i++) {
+             System.out.print(i+1 +"-" );
+        vehiclesArray[i] = vehiclesType.nextLine();
+                      
+ }
+ 
+ 
+String car ="car";
+System.out.println("\n  vehicles you wanted are : ");
+		for (i = 0; i < vehiclesArray.length; i++)
+                {System.out.print(i+1 +"-" + vehiclesArray[i] + "\t");
+                
+//                    elseif (("truck").equals(vehiclesArray[i]))
+//                           { num=3;  
+                
+                
+                
 
-switch(num) {
- case 1:
+                
+switch( vehiclesArray[i]) {
+ case "car":
    
     carObject.welcomeMsg();
     System.out.println("newest car is : "+carObject.getnewestCars()); 
@@ -50,6 +74,7 @@ switch(num) {
     carObject.setname(carObject.name, carObject.type);
      System.out.println("\n Enter the Fuel Type "); 
     carObject.FuelType=vehiclesType.nextLine();
+    carObject.setFuelType( carObject.FuelType);
     carObject.setColor("white");
     carObject.setseatsNo(4);
     carObject.setWheelsNo(4);
@@ -61,7 +86,7 @@ switch(num) {
     carObject.setHorsePower(66);
         System.out.println("bye"); 
     break;
-  case 2:
+  case "motorcycle":
          
     MotorcycleObject.welcomeMsg();
     System.out.println("Enter name of the Motorcycle"); 
@@ -84,12 +109,12 @@ switch(num) {
         System.out.println("bye"); 
   
     break;
-     case 3:
+     case "truck":
          
     truckObject.welcomeMsg();
-      System.out.println("Enter name of the car"); 
+      System.out.println("Enter name of the truck"); 
        truckObject.name = vehiclesType.nextLine();
-           System.out.println("Enter type of the car"); 
+           System.out.println("Enter type of the truck"); 
        truckObject.type=vehiclesType.nextLine();
     truckObject.setname( truckObject.name, truckObject.type);
      System.out.println("\n Enter the Fuel Type "); 
@@ -123,31 +148,16 @@ switch(num) {
   
     break;
     
-     case 4:
-
- 	   System.out.println("press how many type of vehicles do you want"); 
-            int  vehiclesNum = input.nextInt();
- String[] vehiclesArray =new String[vehiclesNum];     
-int i;
-System.out.println("Please enter  types  ");              
- for ( i = 0; i < vehiclesArray.length; i++) {
-             System.out.print(i +"-" );
-        vehiclesArray[i] = vehiclesType.nextLine();  }
-
-System.out.println("\n  vehicles you wanted are : ");
-		for (i = 0; i < vehiclesArray.length; i++)
-		{System.out.print(i +"-" + vehiclesArray[i] + "\t");}
-                System.out.println("\n ");
-  break;
+   
        
   default:
       System.out.println("Not Failed number ..try again with numbers from 1 to 4");
 }
 
    
-
-
-
-    
-    }  
+                
+    }
+    }           
 }
+
+
