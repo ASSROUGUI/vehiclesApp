@@ -54,9 +54,7 @@ String car ="car";
 System.out.println("\n  vehicles you wanted are : ");
 		for (i = 0; i < vehiclesArray.length; i++)
                 {System.out.print(i+1 +"-" + vehiclesArray[i] + "\t");
-                
-//                    elseif (("truck").equals(vehiclesArray[i]))
-//                           { num=3;  
+
                 
                 
                 
