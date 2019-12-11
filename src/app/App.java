@@ -27,8 +27,7 @@ public class App {
    
     
          Scanner input = new Scanner(System.in);
-       String  num ;
-//= input.nextInt();
+
          Scanner vehiclesType = new Scanner(System.in);
   
     car carObject = new car();
