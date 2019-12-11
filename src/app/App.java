@@ -42,7 +42,7 @@ public class App {
             int  vehiclesNum = input.nextInt();
  String[] vehiclesArray =new String[vehiclesNum];     
 int i;
-System.out.println("Please enter  types  1-cars 2-motorcycle 3-trucks  ");              
+System.out.println("Please enter  name of vehicles: car or/and motorcycle or/and truck  ");              
  for ( i = 0; i < vehiclesArray.length; i++) {
              System.out.print(i+1 +"-" );
         vehiclesArray[i] = vehiclesType.nextLine();
@@ -151,7 +151,7 @@ switch( vehiclesArray[i]) {
    
        
   default:
-      System.out.println("Not Failed number ..try again with numbers from 1 to 4");
+      System.out.println("Not Failed number ..try again with these names : car or/and motorcycle or/and truck");
 }
 
    
